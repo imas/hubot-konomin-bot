@@ -1,6 +1,6 @@
 {
   "name": "hubot-konomin-bot",
-  "description": "IDOL M@STER MILLION LIVE! Konomi Baba's bot",
+  "description": "THE IDOLM@STER MILLION LIVE! Konomi Baba's bot (Japanese)",
   "version": "0.0.0",
   "author": "treby <treby@atelier-nodoka.net>",
   "license": "MIT",
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-konomin-bot.git"
+    "url": "git://github.com/millimas/hubot-konomin-bot.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-konomin-bot/issues"
+    "url": "https://github.com/millimas/hubot-konomin-bot/issues"
   },
 
   "dependencies": {
