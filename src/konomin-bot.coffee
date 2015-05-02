@@ -5,7 +5,7 @@
 #   Nothing for now!!
 #
 # Commands:
-#   hubot <keyword> (defined below) - reply as a "Konomi Baba"
+#   hubot <keyword> (defined below) - reply as "Konomi Baba"
 #
 # Notes:
 #   <optional notes required for the script>
