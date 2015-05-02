@@ -38,6 +38,14 @@ module.exports = (robot) ->
     ]
     humanSaying res, res.random(patterns)
 
+  robot.respond /.*(眠い|寝).*/i, (res) ->
+    patterns = [
+      'ほらほら、頑張って！'
+      '寝てください、プロデューサー'
+      'こんなところで寝てしまったら風邪引きますよ！'
+    ]
+    humanSaying res, res.random(patterns)
+
   robot.respond /(行|い)ってきます.*/i, (res) ->
     humanSaying res, 'いってらっしゃ〜い'
 
