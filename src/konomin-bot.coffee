@@ -55,7 +55,7 @@ module.exports = (robot) ->
     humanSaying res, '応援するよ！'
 
   robot.respond /今日も(ビビ|びび)(ッ|っ)(ト|と)(パーフェクト|Perfect)?.*/i, (res) ->
-    res_text = if res.match[1]? then '' else 'パーフェクト！ '
+    res_text = if res.match[4]? then '' else 'パーフェクト！ '
     res_text += 'イェイ！'
     humanSaying res, res_text
 
