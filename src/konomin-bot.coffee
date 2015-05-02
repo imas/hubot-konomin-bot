@@ -22,7 +22,7 @@ humanSaying = (res, text) ->
   @already_responded = true
 
 module.exports = (robot) ->
-  robot.respond /.*(おはよう).*/i, (res) ->
+  robot.respond /.*(おはよ).*/i, (res) ->
     patterns = [
       'おはようプロデューサー。今日も一日、セクシーに行くわよ！'
       'おはよう！'
@@ -30,7 +30,7 @@ module.exports = (robot) ->
     ]
     humanSaying res, res.random(patterns)
 
-  robot.respond /.*(おやすみ).*/i, (res) ->
+  robot.respond /.*(おやす).*/i, (res) ->
     patterns = [
       'おやすみ、また明日ね'
       'おやすみ、プロデューサー。なんならお姉さんが添い寝してあげるわよ……フフ、冗談よ。'
