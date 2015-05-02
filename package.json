@@ -1,7 +1,7 @@
 {
   "name": "hubot-konomin-bot",
   "description": "THE IDOLM@STER MILLION LIVE! Konomi Baba's bot (Japanese)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "treby <treby@atelier-nodoka.net>",
   "license": "MIT",
 
