@@ -46,6 +46,22 @@ module.exports = (robot) ->
     ]
     humanSaying res, res.random(patterns)
 
+  robot.respond /.*(働|はたら)きたくない.*/i, (res) ->
+    patterns = [
+      'ほらほら、頑張って！'
+      'つ【スパドリ】'
+      'http://dic.pixiv.net/a/%E5%8F%8C%E8%91%89%E6%9D%8F'
+    ]
+    humanSaying res, res.random(patterns)
+
+  robot.respond /.*次(の)?イベ(ント)?.*(何|どんな).*/i, (res) ->
+    patterns = [
+      '(o・∇・o)'
+      '飴が必要なのは確かね……'
+      'http://imas.gree-apps.net/app/index.php/event'
+    ]
+    humanSaying res, res.random(patterns)
+
   robot.respond /(行|い)ってきます.*/i, (res) ->
     humanSaying res, 'いってらっしゃ〜い'
 
