@@ -46,6 +46,20 @@ module.exports = (robot) ->
   robot.respond /(Thank|thx)/i, (res) ->
     humanSaying res, "You're welcome!"
 
+  robot.respond /.*(誕生日).*/i, (res) ->
+    return unless res.match[0].match('おめでと')?
+
+    tw = res.envelope.message
+    name = if tw.data? then tw.data.user.name else tw.user.name
+    response = res.random(birthdayResponseList(name))
+    humanSaying res, response
+
+  robot.respond /.*(はぴば|ハピバ|ハッピーバースデー|Happy birthday).*/i, (res) ->
+    tw = res.envelope.message
+    name = if tw.data? then tw.data.user.name else tw.user.name
+    response = res.random(birthdayResponseList(name))
+    humanSaying res, response
+
   robot.respond /.*(眠い|寝).*/i, (res) ->
     patterns = [
       'ほらほら、頑張って！'
@@ -186,3 +200,31 @@ module.exports = (robot) ->
       @already_responded = false
     , 1000
     @already_responded = true
+
+  birthdayResponseList = (username) ->
+    [bmonth, bday] = [6, 12]
+
+    d = new Date()
+    [month, day] = [d.getMonth() + 1, d.getDate()]
+    name = if username? then "#{username}さん" else 'プロデューサー'
+
+    if month is bmonth
+      if day < bday
+        [ "まだちょっと早いけど……#{name}、ありがとっ♪"
+          "こらこら、人の誕生日は間違えちゃいけないぞ！でも気にかけてくれてありがと、#{name}"
+        ]
+      else if day > bday
+        [ "日にちはもう過ぎちゃったけど……ありがとっ、#{name}♪"
+          "フフッ……ちょっと遅れちゃったわね、#{name}……ありがとっ♪一年よろしくね"
+        ]
+      else
+        [ "#{name}、ありがとう！照れくさいけど、嬉しい♪"
+          "……ウフフッ、ありがと、#{name}！お姉さん、嬉しい。"
+          "#{name}、誕生日パーティを開いてくれて、ありがとね。本当に嬉しくて、ずっと忘れないだろうな。一年よろしくね♪"
+          "#{name}。実は、うちに秘蔵のカラスミがあるの。食べに来ていいわよ？あ、暇ならでいいのよ。……でも、二人がいいな。"
+          "う、うん。今日は私の誕生日だけど、この年でお祝いなんて、照れくさいな〜。でもありがと、#{name}♪"
+          "ありがとう！……誕生日なんてどうでもいいのよ？ま、#{name}が祝いたいなら、素敵なお店がいいなって思うけど。"
+          "お、お姉さんは大人だから、浮かれてないんだぞ、……フフ♪……ありがと、#{name}"
+        ]
+    else
+      ["私の誕生日は#{bmonth}月よ、#{name}！"]
