@@ -13,14 +13,6 @@
 # Author:
 #   treby
 
-humanSaying = (res, text) ->
-  return if @already_responded
-  setTimeout () =>
-    res.reply text
-    @already_responded = false
-  , 1000
-  @already_responded = true
-
 module.exports = (robot) ->
   robot.respond /.*(おはよ).*/i, (res) ->
     patterns = [
@@ -175,3 +167,11 @@ module.exports = (robot) ->
       'プロデューサーが見せてくれた景色、ずっと忘れないだろうな。昔の私には、見えなかったものがたくさんあって……身長は関係ないわよ！ウフフ'
     ]
     humanSaying res, res.random(patterns)
+
+  humanSaying = (res, text) ->
+    return if @already_responded
+    setTimeout () =>
+      res.reply text
+      @already_responded = false
+    , 1000
+    @already_responded = true
