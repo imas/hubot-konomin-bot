@@ -24,11 +24,27 @@ module.exports = (robot) ->
 
   robot.respond /.*(おやす).*/i, (res) ->
     patterns = [
-      'おやすみ、また明日ね'
       'おやすみ、プロデューサー。なんならお姉さんが添い寝してあげるわよ……フフ、冗談よ。'
       'ゆっくり休んでね、プロデューサー'
     ]
     humanSaying res, res.random(patterns)
+
+  robot.respond /.*お(疲|つか)れ.*/i, (res) ->
+    patterns = [
+      'お疲れ様！さぁて、飲みに行くわよ！'
+      'フフ、お疲れ様、プロデューサー！'
+    ]
+    humanSaying res, res.random(patterns)
+
+  robot.respond /.*ありがと.*/i, (res) ->
+    patterns = [
+      'こちらこそ、ありがとう！'
+      'どういたしまして、フフッ'
+    ]
+    humanSaying res, res.random(patterns)
+
+  robot.respond /(Thank|thx)/i, (res) ->
+    humanSaying res, "You're welcome!"
 
   robot.respond /.*(眠い|寝).*/i, (res) ->
     patterns = [
@@ -40,7 +56,6 @@ module.exports = (robot) ->
 
   robot.respond /.*(働|はたら)きたくない.*/i, (res) ->
     patterns = [
-      'ほらほら、頑張って！'
       'つ【スパドリ】'
       'http://dic.pixiv.net/a/%E5%8F%8C%E8%91%89%E6%9D%8F'
     ]
@@ -103,7 +118,6 @@ module.exports = (robot) ->
 
   robot.respond /.*セクシー.*/i, (res) ->
     patterns = [
-      'フフ、ありがとっ♪'
       'フフ……プロデューサー、ここはオトナの私がトップバッターとしてみんなの心に、火をつけてあげるわね｡'
       'さあ！あの夕焼けのように、バーニングセクシーっ！'
       'こらこらプロデューサー、視線がやらしーぞっ♪'
@@ -128,13 +142,12 @@ module.exports = (robot) ->
 
   robot.respond /.*なでなで.*/i, (res) ->
     patterns = [
-      'こら、頭をなでるなー'
       'こら、頭を撫でるな。小さくてもレディなのっ！'
       'また頭を……まあ、今回は特別になでさせてあげるわね。ウフフ、おめでとっ♪'
     ]
     humanSaying res, res.random(patterns)
 
-  robot.respond /.*(かわいい|可愛い|キュート).*/i, (res) ->
+  robot.respond /.*(かわいい|可愛い|キュート|ping).*/i, (res) ->
     patterns = [
       'あ、あのね～！私は、クールビューティな24歳だって言ってるでしょ'
       'この格好は何なのよ～！ムキー、似合ってなんかない、私の売りはセクシーなのっ!'
@@ -156,13 +169,11 @@ module.exports = (robot) ->
     patterns = [
       '「今年も浮いた話ゼロだね」なんて、失礼しちゃうわ！そりゃ、あったって断るけど……アイドルですし？'
       '莉緒ちゃん、起きて。飲み直すわよ！'
-      '莉緒ちゃん！'
     ]
     humanSaying res, res.random(patterns)
 
   robot.respond /.*(このみ|(姐|姉|ねえ)さん).*/i, (res) ->
     patterns = [
-      'どうしたの、プロデューサー？'
       'お客様ね……フフッ。今宵、禁断の宴にようこそ……。素敵な夜が過ごせるよう、もてなしてあげるわ。'
       'プロデューサーが見せてくれた景色、ずっと忘れないだろうな。昔の私には、見えなかったものがたくさんあって……身長は関係ないわよ！ウフフ'
     ]
