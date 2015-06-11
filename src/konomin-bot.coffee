@@ -16,7 +16,7 @@
 humanSaying = (res, text) ->
   return if @already_responded
   setTimeout () =>
-    res.send text
+    res.reply text
     @already_responded = false
   , 1000
   @already_responded = true
